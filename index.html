@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123b35">
+    <meta name="description" content="Registre suas atividades e mantenha seu diário de bordo sempre à mão.">
+    <title>Diário de Bordo</title>
+    <link rel="icon" href="icons/icon-192.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Diário de Bordo — início">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Diário de Bordo</span>
+      </a>
+      <button class="install-button" id="install-button" type="button" hidden>
+        Instalar aplicativo
+      </button>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">UM ESPAÇO SÓ SEU</p>
+        <h1 id="page-title">Seu dia merece<br>ser lembrado.</h1>
+        <p class="intro-copy">Guarde momentos, ideias e pequenas conquistas. Seu diário fica com você, mesmo offline.</p>
+        <div class="privacy-note">
+          <span aria-hidden="true">◈</span>
+          <p>Seus registros ficam salvos neste dispositivo.</p>
+        </div>
+      </section>
+
+      <section class="entry-panel" aria-labelledby="form-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NOVO REGISTRO</p>
+            <h2 id="form-title">Como foi seu dia?</h2>
+          </div>
+          <span class="heading-spark" aria-hidden="true">✳</span>
+        </div>
+        <form id="entry-form">
+          <label for="entry-title">Título</label>
+          <input id="entry-title" name="title" type="text" maxlength="80" placeholder="Um momento para guardar" required>
+
+          <label for="entry-description">Descrição <span class="optional">(opcional)</span></label>
+          <textarea id="entry-description" name="description" rows="4" maxlength="1000" placeholder="Conte um pouco mais sobre o que aconteceu..."></textarea>
+
+          <label for="entry-date">Data</label>
+          <input id="entry-date" name="date" type="date" required>
+
+          <button class="submit-button" type="submit">
+            <span aria-hidden="true">＋</span> Guardar registro
+          </button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="entries-section" aria-labelledby="entries-title">
+        <div class="entries-heading">
+          <div>
+            <p class="eyebrow">SUAS MEMÓRIAS</p>
+            <h2 id="entries-title">Diário <span class="entry-count" id="entry-count">0</span></h2>
+          </div>
+          <span class="entries-decoration" aria-hidden="true">✺</span>
+        </div>
+        <div class="entries-list" id="entries-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span aria-hidden="true">✦</span> Feito para acompanhar você, onde estiver.
+    </footer>
+  </body>
+</html>
